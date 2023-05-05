@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F3-Module-Test</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>MY PUBLIC IP ADDRESS :<span id="ip"></span></h1>
+        <p id="show-ip">Please wait Fetching Data from API...</p>
+
+        <button id="fetch-data">Get Data</button>
+
+        <!-- show User info -->
+        <div class="info">
+            <div class="content">
+                <div id="lat">Lat:</div>
+                <div id="long">Long:</div>
+            </div>
+
+            <div class="content">
+                <div id="city">City:</div>
+                <div id="region">Region:</div>
+            </div>
+
+            <div class="content">
+                <div id="organisation">Organisation:</div>
+                <div id="hostname">Hostname:</div>
+            </div>
+        </div>
+
+        <div id="x"></div>
+
+        <!-- show Map Here -->
+        <iframe 
+        id="map"
+        style="margin-top: 20px;"
+        width="100%" 
+        height="500" 
+        frameborder="0" 
+        scrolling="no" 
+        marginheight="0" 
+        marginwidth="0" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="">
+        </iframe>
+
+        <!-- show Other content  -->
+        <div class="other-content">
+            <div id="time-zone">Time Zone:</div>
+            <div id="date-time">Date And Time:</div>
+            <div id="pincode">Pincode:</div>
+            <div id="message">Message:</div>
+        </div>
+
+
+        <!-- Search Bar -->
+        <input id="search-bar" type="search" placeholder="Filter">
+
+        <!-- show postoffice -->
+        <div class="post-office"></div>
+
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</html>
