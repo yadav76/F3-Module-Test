@@ -31,23 +31,24 @@ fetch(ipUrl)
 .then((response) => response.json())
 .then((data) => {
     IP = data.ip;
-    showIp.style.display='none';
+
     document.getElementById('ip').innerText = data.ip;
+    document.getElementById('ip').style.display = "none";
 })
 
 
 fetchBtn.addEventListener('click', () => {
 
-    showIp.style.display = "block";
-
     setTimeout(() => {
+
+        document.getElementById('ip').style.display = "inline-block";
         
         var url = `https://ipinfo.io/${IP}/geo?token=d6aa724e6f2633`;
 
         fetch(url)
         .then((response) => response.json())
         .then((data) => {
-            showIp.style.display = "none";
+
             info.style.display = "flex";
             pinContent.style.display = "block";
 
@@ -106,12 +107,12 @@ function post(pin){
 // console.log(postArr);
 
 function showPost(Arr) {
-    postOffice.innerHTML='';
-    let myHtml='';
 
+    postOffice.innerHTML='';
+    let tempHtml='';
 
     Arr.map((ele)=>{
-        myHtml+=`
+        tempHtml +=`
         <div class="post-content">
          <div><strong>Name:</Strong> ${ele.Name}</div>
          <div><strong>Branch Type:</Strong> ${ele.BranchType}</div>
@@ -121,5 +122,18 @@ function showPost(Arr) {
         </div>
         `
     })
-    postOffice.innerHTML=myHtml;
+
+    postOffice.innerHTML= tempHtml;
 }
+
+
+// Filter the Post office
+searchBar.addEventListener('input',()=>{
+    var Arr = postArr.filter((ele)=>{
+        
+        if(ele.Name.toLowerCase().includes(searchBar.value.trim().toLowerCase()) || ele.BranchType.toLowerCase().includes(searchBar.value.trim().toLowerCase())){
+            return ele;
+        }
+    })
+    showPost(Arr);
+})
