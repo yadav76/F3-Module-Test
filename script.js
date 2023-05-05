@@ -39,6 +39,7 @@ fetch(ipUrl)
 
 fetchBtn.addEventListener('click', () => {
 
+
     setTimeout(() => {
 
         document.getElementById('ip').style.display = "inline-block";
@@ -83,6 +84,10 @@ fetchBtn.addEventListener('click', () => {
 
     // Hide fetch Button
         fetchBtn.style.display='none';
+
+    setTimeout(() => {
+        alert("Please Open the Link in Chrome Browser Else It will Not Fetch the Data from API");
+    }, 2000);
 })
 
 
