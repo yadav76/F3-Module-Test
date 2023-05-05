@@ -65,7 +65,7 @@ fetchBtn.addEventListener('click', () => {
                 city.innerHTML = `<strong>City: </strong>${jsonData.city}`;
                 region.innerHTML = `<strong>Region: </strong>${jsonData.region}`;
                 organisation.innerHTML = `<strong>Organisation: </strong>${jsonData.org}`;
-                hostname.innerHTML = `<strong>Hostname: </strong>${jsonData.hostname}`;
+                hostname.innerHTML = `<strong>Hostname: </strong>domain.com`;
 
             // Now show map
             map.setAttribute('src',`https://maps.google.com/maps?q=${lat},${long}&hl=en&z=14&amp&output=embed`);
