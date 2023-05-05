@@ -95,7 +95,7 @@ function post(pin){
 
         message.innerHTML = `<strong>Message: </strong>${data[0].Message}`;
 
-        postArr = data[0].postOffice;
+        postArr = data[0].PostOffice;
 
         searchBar.style.display='block';
 
@@ -103,6 +103,23 @@ function post(pin){
     })
 }
 
-function showPost(postArr) {
+// console.log(postArr);
 
+function showPost(Arr) {
+    postOffice.innerHTML='';
+    let myHtml='';
+
+
+    Arr.map((ele)=>{
+        myHtml+=`
+        <div class="post-content">
+         <div><strong>Name:</Strong> ${ele.Name}</div>
+         <div><strong>Branch Type:</Strong> ${ele.BranchType}</div>
+         <div><strong>Delivery Status:</Strong> ${ele.DeliveryStatus}</div>
+         <div><strong>District:</Strong> ${ele.District}</div>
+         <div><strong>Division:</Strong> ${ele.Division}</div>
+        </div>
+        `
+    })
+    postOffice.innerHTML=myHtml;
 }

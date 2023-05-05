@@ -81,11 +81,10 @@ input{
     margin-bottom: 10px;
     font-size: 20px;
 }
-#message1{
-    display: none;
-}
 
-@media (max-width:647px){
+
+/* Media Queries */
+@media (max-width:700px){
     .post-container{
         grid-template-columns: auto;
 
